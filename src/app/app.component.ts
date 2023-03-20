@@ -8,6 +8,8 @@ import { TodoService } from './services/todo.service';
 })
 export class AppComponent {
   public todoObject = { name: 'Wash clothes', done: false, id: 3 };
+  public show = true;
+  todos = [];
 
   constructor(
     private readonly elementRef: ElementRef,
@@ -15,7 +17,7 @@ export class AppComponent {
   ) {
     console.log('elementRef from constructor', elementRef);
 
-    console.log(todoService.getAll());
+    this.todos = todoService.getAll();
   }
 
   catchDoneEvent(todo: any) {
@@ -24,5 +26,9 @@ export class AppComponent {
 
   logElementRef() {
     console.log('elementRef from console as property', this.elementRef);
+  }
+
+  toggle() {
+    this.show = !this.show;
   }
 }

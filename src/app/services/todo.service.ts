@@ -7,6 +7,8 @@ export class TodoService {
 
   constructor() {
     console.log('TodoService.constructor');
+    this.todos.push({ name: 'Wash clothes', done: false, id: 3 });
+    this.todos.push({ name: 'Garten harken', done: false, id: 4 });
   }
 
   create(todo: Todo) {

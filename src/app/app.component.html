@@ -1,3 +1,12 @@
 <h2>7. Dependency Injection/Services</h2>
+<h2>8. Structural Directives</h2>
 
-<app-todo [todo]="todoObject" (done)="catchDoneEvent($event)"></app-todo>
+<button (click)="toggle()">Toggle</button>	
+<div *ngIf="show">	
+	I am visible!	
+</div>	
+<ul>	
+  <li *ngFor="let todo of todos">{{todo.name}}</li>	
+</ul>	
+<app-todo *ngFor="let todo of todos" [todo]="todoObject" (done)="catchDoneEvent($event)"></app-todo>
+
